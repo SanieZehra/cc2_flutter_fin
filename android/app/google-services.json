@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "674583178425",
+    "project_id": "pandago-738e3",
+    "storage_bucket": "pandago-738e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674583178425:android:549869fcf85d972ae57f68",
+        "android_client_info": {
+          "package_name": "com.example.cc2_flutter_fin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJg7O2cMHZQjmWIWJmDDN-FtfEwisYhvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
