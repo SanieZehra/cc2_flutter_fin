@@ -43,16 +43,18 @@ class LoginView extends StatelessWidget {
                         height: 55,
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(25, 0, 25, 10),
-                          child: customTextField(
-                              controller: controller.passwordController,
-                              label: "Password",
-                              obsecureText: true,
-                              onValidate: (str){
-                                return HelperFunctions.checkPassword(str);
-                              },
-                              focus: controller.passwordFocusNode,
-                              inputAction: TextInputAction.next,
-                              textInputType: TextInputType.visiblePassword),
+                          child: Obx(()=> customTextField(
+                                suffixIcon:IconButton(onPressed:(){controller.showPassword();}, icon:Icon(controller.suffixIcon.value)),
+                                controller: controller.passwordController,
+                                label: "Password",
+                                obsecureText: controller.obscureText.value,
+                                onValidate: (str){
+                                  return HelperFunctions.checkPassword(str);
+                                },
+                                focus: controller.passwordFocusNode,
+                                inputAction: TextInputAction.next,
+                                textInputType: TextInputType.visiblePassword),
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -88,14 +90,18 @@ class LoginView extends StatelessWidget {
                             }
                         ),
                       ),
-                      Row(
-                        crossAxisAlignment:CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            width: 200,
-                              child: Image.asset('assets/images/login.gif')),
-                        ],
-                      ),
+                      Padding(
+                            padding: const EdgeInsets.only(top: 20,left: 8.0,right: 8.0,),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: Container(
+                                  width: 340,
+                                    child: Image.asset('assets/images/login.gif',)),
+                              ),
+                            ),
+                          ),
                     ],)
               ),
             ),

@@ -21,7 +21,7 @@ class LoginScreenController extends GetxController{
 
   RxBool obscureText = true.obs;
 
-  Rx<IconData> suffixIcon = Icons.add.obs;
+  Rx<IconData> suffixIcon = Icons.remove_red_eye_rounded.obs;
 
   Future<void> login() async {
     if(loginKey.currentState!.validate()){
@@ -36,7 +36,7 @@ class LoginScreenController extends GetxController{
           print(">>>>>>>>${email}");
           if(email!=null){
             print(email);
-            Get.toNamed('/dashboard');
+            Get.offNamed('/dashboard');
           }
         }
       } on FirebaseAuthException catch (e) {
@@ -79,10 +79,9 @@ class LoginScreenController extends GetxController{
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
-
       final UserCredential authResult = await FirebaseAuth.instance.signInWithCredential(credential);
       final User? user = authResult.user;
-
+      Get.toNamed('/dashboard');
       return user;
     } catch (e) {
       print("Error during sign-in: $e");
@@ -101,6 +100,10 @@ class LoginScreenController extends GetxController{
     Get.toNamed('/forgotPassword');
   }
 
+  void showPassword() {
+    obscureText.value = !obscureText.value;
+    suffixIcon.value = obscureText.value ? Icons.remove_red_eye_rounded : Icons.remove_red_eye_outlined;
+  }
 
 }
 

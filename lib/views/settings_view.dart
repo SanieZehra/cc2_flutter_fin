@@ -1,3 +1,4 @@
+import 'package:cc2_flutter_fin/utils/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -38,10 +39,10 @@ class SettingsView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12),
                           color: Colors.white,
                           border: Border.all(
-                              style: BorderStyle.solid,color: Color(0xffC68017)
+                              style: BorderStyle.solid,color: mainColor
                           )
                       ),
-                      height: 80,
+                      height: 60,
                       child: const Row(
                         children: [
                           Padding(
@@ -74,15 +75,15 @@ class SettingsView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12),
                           color: Colors.white,
                           border: Border.all(
-                              style: BorderStyle.solid,color: Color(0xffC68017)
+                              style: BorderStyle.solid,color: mainColor
                           )
                       ),
-                      height: 80,
+                      height: 60,
                       child: const Row(
                         children: [
                           Padding(
                             padding: EdgeInsets.only(left: 30),
-                            child: CircleAvatar(child: Icon(Icons.history),),
+                            child: CircleAvatar(child: Icon(Icons.document_scanner),),
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: 30),
@@ -110,15 +111,15 @@ class SettingsView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12),
                           color: Colors.white,
                           border: Border.all(
-                              style: BorderStyle.solid,color: Color(0xffC68017)
+                              style: BorderStyle.solid,color: mainColor
                           )
                       ),
-                      height: 80,
+                      height: 60,
                       child: const Row(
                         children: [
                           Padding(
                             padding: EdgeInsets.only(left: 30),
-                            child: CircleAvatar(child: Icon(Icons.history),),
+                            child: CircleAvatar(child: Icon(Icons.privacy_tip),),
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: 30),

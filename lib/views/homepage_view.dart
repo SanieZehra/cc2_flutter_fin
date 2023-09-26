@@ -1,5 +1,6 @@
 
 import 'package:banner_carousel/banner_carousel.dart';
+import 'package:cc2_flutter_fin/utils/theme.dart';
 import 'package:cc2_flutter_fin/views/product_detail_view.dart';
 import 'package:cc2_flutter_fin/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class HomepageView extends StatelessWidget {
                     child: Container(
                       child: BannerCarousel(banners: BannerImages.listBanners,
                         onTap: (id) => print(id),
-                        activeColor: const Color(0xffc68017),
+                        activeColor: mainColor,
                       ),
                     ),
                   ),
@@ -46,7 +47,7 @@ class HomepageView extends StatelessWidget {
                                 categoryButton(
                                     title: "BOTTOMS",
                                     onPressed: (){},
-                                backgroundColor: const Color(0xffc68017),
+                                backgroundColor: mainColor,
                                   imageAsset: "assets/images/2.png",
                                 ),
                               ],
@@ -56,7 +57,7 @@ class HomepageView extends StatelessWidget {
                               children: [
                                 categoryButton(
                                     title: "ACCESSORIES",
-                                    backgroundColor: const Color(0xffc68017),
+                                    backgroundColor: mainColor,
                                     imageAsset: "assets/images/3.png",
                                     onPressed: (){}),
                                 const SizedBox(width: 10),

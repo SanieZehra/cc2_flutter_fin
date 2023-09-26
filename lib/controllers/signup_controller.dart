@@ -22,7 +22,7 @@ class SignUpController extends GetxController {
 
   RxBool obscureText = true.obs;
 
-  Rx<IconData> suffixIcon = Icons.add.obs;
+  Rx<IconData> suffixIcon = Icons.remove_red_eye_rounded.obs;
 
   final GlobalKey<FormState> loginKey = GlobalKey();
 
@@ -69,5 +69,10 @@ class SignUpController extends GetxController {
         }
       }
     }
+  }
+
+  void showPassword() {
+    obscureText.value = !obscureText.value;
+    suffixIcon.value = obscureText.value ? Icons.remove_red_eye_rounded : Icons.remove_red_eye_outlined;
   }
 }

@@ -1,5 +1,6 @@
 import 'package:cc2_flutter_fin/views/cart_view.dart';
 import 'package:cc2_flutter_fin/views/dashboard_view.dart';
+import 'package:cc2_flutter_fin/views/homepage_view.dart';
 import 'package:cc2_flutter_fin/views/login_view.dart';
 import 'package:cc2_flutter_fin/views/order_history.dart';
 import 'package:cc2_flutter_fin/views/privacy_policy.dart';
@@ -28,8 +29,8 @@ class ApplicationRoutes extends GetxController{
     GetPage(name: "/terms", page: ()=>TermsAndCondition()),
     GetPage(name: "/history", page: ()=>OrderHistory()),
     GetPage(name: "/privacy", page: ()=>PrivacyPolicy()),
-    GetPage(name: "/forgotPassword", page: ()=>ForgotPassword())
-
+    GetPage(name: "/forgotPassword", page: ()=>ForgotPassword()),
+    GetPage(name: "/homepage", page: ()=>HomepageView())
   ];
 
 }

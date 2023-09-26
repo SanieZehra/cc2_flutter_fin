@@ -1,4 +1,5 @@
 
+import 'package:cc2_flutter_fin/utils/theme.dart';
 import 'package:flutter/material.dart';
 
 import '../controllers/categories_controller.dart';
@@ -52,7 +53,7 @@ class _ExplorePageState extends State<ExplorePage> {
                       });
                     },
                     child: Text('Her',style: TextStyle(
-                        color: Colors.black
+                        color: black
                     ),),
                   ),
                 ),
@@ -67,7 +68,7 @@ class _ExplorePageState extends State<ExplorePage> {
                       });
                     },
                     child: Text('His',style: TextStyle(
-                        color: Colors.black
+                        color: black
                     ),),
                   ),
                 ),
@@ -82,7 +83,7 @@ class _ExplorePageState extends State<ExplorePage> {
                       });
                     },
                     child: Text('Other',style: TextStyle(
-                        color: Colors.black
+                        color: black
                     ),),
                   ),
                 ),
@@ -103,13 +104,13 @@ class _ExplorePageState extends State<ExplorePage> {
                         child: ListTile(
                           title: Text(
                               '${itemLen.prodName}',
-                              style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 16,fontFamily: 'MyCustomFont'),
+                              style: TextStyle(color: black,fontWeight: FontWeight.w500,fontSize: 16,fontFamily: 'MyCustomFont'),
                               overflow: TextOverflow.ellipsis,
                               maxLines: 2// Change text color
                           ),
                           subtitle: Text(
                               'Price: ${itemLen.categoryId}',
-                              style: TextStyle(color: Colors.black,fontSize: 14,fontFamily: 'MyCustomFont',fontWeight: FontWeight.w500) // Change text color
+                              style: TextStyle(color: black,fontSize: 14,fontFamily: 'MyCustomFont',fontWeight: FontWeight.w500) // Change text color
                           ),
                           leading: Container(
                             width: 70,

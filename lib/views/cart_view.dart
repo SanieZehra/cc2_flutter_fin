@@ -1,3 +1,4 @@
+import 'package:cc2_flutter_fin/utils/theme.dart';
 import 'package:cc2_flutter_fin/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,7 +35,7 @@ class CartView extends StatelessWidget {
                       controller.onRemoveAllFromCart(item);
                     },
                     background: Container(
-                      color: Colors.red.shade900,
+                      color: red,
                       alignment: Alignment.centerRight,
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: const Icon(
@@ -49,14 +50,14 @@ class CartView extends StatelessWidget {
                         child: ListTile(
                           title: Text(
                             '${item.name}',
-                            style: const TextStyle(color: Colors.black87,fontFamily: 'MyCustomFont',fontWeight: FontWeight.w500,fontSize: 16),
+                            style: const TextStyle(color: black,fontFamily: 'MyCustomFont',fontWeight: FontWeight.w500,fontSize: 16),
                           ),
                           subtitle: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 'Price: \$${item.price.toStringAsFixed(2)}',
-                                style: const TextStyle(color: Colors.black87,fontFamily: 'MyCustomFont',fontWeight: FontWeight.w500,fontSize: 14),
+                                style: const TextStyle(color: black,fontFamily: 'MyCustomFont',fontWeight: FontWeight.w500,fontSize: 14),
                               ),
                               Row(
                                 children: [
@@ -75,7 +76,7 @@ class CartView extends StatelessWidget {
                                       ),
                                       Text(
                                         item.quantity.toString(),
-                                        style: const TextStyle(color: Colors.black87),
+                                        style: const TextStyle(color: black),
                                       ),
                                       IconButton(
                                         icon: const Icon(Icons.add),
@@ -93,7 +94,7 @@ class CartView extends StatelessWidget {
                                     children: [
                                       Text(
                                         'Total: \$${item.total}',
-                                        style: const TextStyle(color: Colors.black87,fontFamily:'MyCustomFont',fontWeight: FontWeight.w500,fontSize: 14)
+                                        style: const TextStyle(color: black,fontFamily:'MyCustomFont',fontWeight: FontWeight.w500,fontSize: 14)
                                   ),
                                     ],
                                   ),

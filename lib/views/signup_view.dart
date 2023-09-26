@@ -67,32 +67,37 @@ class SignUpView extends StatelessWidget {
                 height: 65,
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(30, 0, 30, 10),
-                  child: customTextField(
-                    onValidate:(str){
-                      return HelperFunctions.checkPassword(str);
-                    },
-                      controller: controller.passwordController,
-                      label: "Password",
-                      obsecureText: true,
-                      focus: controller.passwordFocusNode,
-                      inputAction: TextInputAction.next,
-                      textInputType: TextInputType.visiblePassword),
+                  child: Obx(()=>
+                     customTextField(
+                        suffixIcon:IconButton(onPressed:(){controller.showPassword();}, icon:Icon(controller.suffixIcon.value)),
+                      onValidate:(str){
+                        return HelperFunctions.checkPassword(str);
+                      },
+                        controller: controller.passwordController,
+                        label: "Password",
+                         obsecureText: controller.obscureText.value,
+                        focus: controller.passwordFocusNode,
+                        inputAction: TextInputAction.next,
+                        textInputType: TextInputType.visiblePassword),
+                  ),
                 ),
               ),
               Container(
                 height: 65,
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(30, 0, 30, 10),
-                  child: customTextField(
-                      controller: controller.confirmPasswordController,
-                      onValidate: (str){
-                        return HelperFunctions.checkPassword(str);
-                      },
-                      label: "Confirm Password",
-                      obsecureText: true,
-                      focus: controller.confirmPasswordFocusNode,
-                      inputAction: TextInputAction.done,
-                      textInputType: TextInputType.visiblePassword),
+                  child: Obx(()=> customTextField(
+                        suffixIcon:IconButton(onPressed:(){controller.showPassword();}, icon:Icon(controller.suffixIcon.value)),
+                        controller: controller.confirmPasswordController,
+                        onValidate: (str){
+                          return HelperFunctions.checkPassword(str);
+                        },
+                        label: "Confirm Password",
+                        obsecureText: controller.obscureText.value,
+                        focus: controller.confirmPasswordFocusNode,
+                        inputAction: TextInputAction.done,
+                        textInputType: TextInputType.visiblePassword),
+                  ),
                 ),
               ),
               SizedBox(

@@ -39,7 +39,7 @@ class CheckoutView extends StatelessWidget {
                   child:Column(children: [
                     const Padding(
                       padding: EdgeInsets.only(top: 30.0, bottom: 20.0),
-                      child: Text("Please enter Details for Delivery",style: TextStyle(
+                      child: Text("Please enter Details For Payment",style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w800,
                         fontFamily: 'MyCustomFont'

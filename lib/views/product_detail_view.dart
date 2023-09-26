@@ -1,3 +1,4 @@
+import 'package:cc2_flutter_fin/utils/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ class ProductDetailPage extends StatelessWidget {
           Expanded(
             child: Container(
               decoration: BoxDecoration(
-                color: const Color(0xffC68017),
+                color: mainColor,
                 borderRadius: BorderRadius.circular(25.0,),
               ),
               child: Column(

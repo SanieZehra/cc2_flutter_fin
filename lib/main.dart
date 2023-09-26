@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Color(0xffC68017)),
         useMaterial3: true,
+        fontFamily: 'MyCustomFont'
       ),
       getPages: ApplicationRoutes.routes,
       initialRoute: '/splash',

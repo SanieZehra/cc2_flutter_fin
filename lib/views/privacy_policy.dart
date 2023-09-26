@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../controllers/terms_controller.dart';
 
 class PrivacyPolicy extends StatelessWidget {
-  const PrivacyPolicy({Key? key}) : super(key: key);
+  PrivacyPolicy({Key? key}) : super(key: key);
+  TermsController controllerTerms = Get.put(TermsController());
 
   @override
   Widget build(BuildContext context) {
@@ -13,15 +18,21 @@ class PrivacyPolicy extends StatelessWidget {
             fontWeight: FontWeight.w800),),
         centerTitle: true,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('Coming SOON!',style: TextStyle(fontSize: 14,
-              color: Colors.black87,
-              fontFamily: 'MyCustomFont',
-              fontWeight: FontWeight.w400),overflow: TextOverflow.visible,)
-        ],
+      body: Obx(
+            () => controllerTerms.isLoading.value
+            ? const Center(child:  CircularProgressIndicator())
+            : ListView.builder(
+            shrinkWrap: true,
+            itemCount: controllerTerms.termsData.length,
+            itemBuilder: (context, index) {
+              final item = controllerTerms.termsData[index];
+              return ListTile(
+                title: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(item, style: TextStyle(fontSize: 16),textAlign: TextAlign.justify),
+                ),
+              );
+            }),
       ),
     );
   }

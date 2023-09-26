@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/dashboard_controller.dart';
+import '../utils/theme.dart';
 
 
 class MainDashboard extends StatelessWidget {
@@ -16,7 +17,8 @@ class MainDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color(0xffc68017),
+            automaticallyImplyLeading:false,
+          backgroundColor: mainColor,
           toolbarHeight: 100,
           elevation: 14,
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomRight: Radius.circular(70),bottomLeft: Radius.circular(70))),
@@ -50,7 +52,7 @@ class MainDashboard extends StatelessWidget {
                           alignment: Alignment.center,
                           decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
                           child: const Icon(
-                            color: Color(0xffc68017),
+                            color: mainColor,
                             size: 20,
                             Icons.shopping_cart),
                         ),
@@ -90,17 +92,44 @@ class MainDashboard extends StatelessWidget {
                     width: 35,
                     alignment: Alignment.center,
                     decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
-                    child: const Icon(Icons.logout, size: 20, color: Color(0xffc68017)),
+                    child: const Icon(Icons.logout, size: 20, color: mainColor),
                   ),
                 ),
                 const SizedBox(width: 26,)],
             )],),
         body: Obx(() => controller.pages[controller.selectedIndex.value]),
+        floatingActionButton: Obx(() {
+          final fabPosition = controller.fabPosition.value;
+          return Positioned(
+            left: fabPosition.dx,
+            top: fabPosition.dy,
+            child: Draggable(
+              feedback: FloatingActionButton(
+                onPressed: () {
+                  controller.sayHi();
+                },
+                child: Image.asset('assets/images/float.png'),
+                backgroundColor: mainColor,
+              ),
+              child: FloatingActionButton(
+                onPressed: () {
+                  controller.sayHi();
+                },
+                child: Image.asset('assets/images/float.png'),
+                backgroundColor: mainColor,
+              ),
+              onDraggableCanceled: (_, offset) {
+                controller.fabPosition.value = offset;
+              },
+              childWhenDragging: Container(),
+            ),
+          );
+        }),
         bottomNavigationBar: Obx(() => ConvexAppBar(
           style: TabStyle.fixedCircle,
           height: 60,
           cornerRadius: 30,
-          backgroundColor: const Color(0xffc68017),
+          backgroundColor: mainColor,
           activeColor: Colors.white,
           items: const [
             TabItem(icon: Icons.home,title: 'Home'),

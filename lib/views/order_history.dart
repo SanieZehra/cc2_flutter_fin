@@ -17,10 +17,22 @@ class OrderHistory extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('No Data found!',style: TextStyle(fontSize: 14,
+          Text('No Data found!',style: TextStyle(fontSize: 20,
               color: Colors.black87,
               fontFamily: 'MyCustomFont',
-              fontWeight: FontWeight.w400),overflow: TextOverflow.visible,)
+              fontWeight: FontWeight.w800),overflow: TextOverflow.visible,),
+          Padding(
+            padding: const EdgeInsets.only(top: 20,left: 8.0,right: 8.0,),
+            child: Align(
+              alignment: Alignment.center,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+                    width: 340,
+                    child: Image.asset('assets/images/nodata2.gif',)),
+              ),
+            ),
+          ),
         ],
       ),
     );

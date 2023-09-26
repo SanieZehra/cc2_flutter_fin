@@ -10,6 +10,6 @@ class SuccessController extends GetxController{
     controllerHome.subtotal.value=(0.0).obs();
     controllerHome.cartItems.length=0;
     controllerHome.cartCount.value=0;
-    Get.toNamed('/homepage');
+    Get.toNamed('/dashboard');
   }
 }

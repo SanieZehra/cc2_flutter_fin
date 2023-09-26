@@ -25,58 +25,60 @@ class ReviewView extends StatelessWidget {
               Get.back();
             }),
       ),
-      body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              child: Image.asset('assets/images/checkout2.png'),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Obx(()=>Text("SUBTOTAL: \$${homeController.subtotal.value!}",style:TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w800,
-                  fontFamily: 'MyCustomFont'
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            children: [
+              Container(
+                child: Image.asset('assets/images/checkout2.png'),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Obx(()=>Text("SUBTOTAL: \$${homeController.subtotal.value!}",style:TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w800,
+                    fontFamily: 'MyCustomFont'
 
-              ),)),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Obx(()=>Text("NAME: ${controller.name}",style: TextStyle(fontSize: 20,
-                  color: Colors.black87,
-                  fontFamily: 'MyCustomFont',
-                  fontWeight: FontWeight.w800),),),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Obx(()=>Text("CONTACT NUMBER: ${controller.contact}",style: TextStyle(fontSize: 20,
-                  color: Colors.black87,
-                  fontFamily: 'MyCustomFont',
-                  fontWeight: FontWeight.w800),)),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Obx(()=>Text("ADDRESS: ${controller.address}",style: TextStyle(fontSize: 20,
-                  color: Colors.black87,
-                  fontFamily: 'MyCustomFont',
-                  fontWeight: FontWeight.w800),)),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(25.0),
-              child:Image.asset('assets/images/map.png')),
-            Padding(
-              padding: const EdgeInsets.only(left: 30,right: 30,top: 155),
-              child: customButton(
-                  title: "Place Order",
-                  onTap: (){
-                    controller.placeOrder();
-                    print(homeController.subtotal.value.obs);
-                  }),
-            ),
-          ],
+                ),)),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Obx(()=>Text("NAME: ${controller.name}",style: TextStyle(fontSize: 20,
+                    color: Colors.black87,
+                    fontFamily: 'MyCustomFont',
+                    fontWeight: FontWeight.w800),),),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Obx(()=>Text("CONTACT NUMBER: ${controller.contact}",style: TextStyle(fontSize: 20,
+                    color: Colors.black87,
+                    fontFamily: 'MyCustomFont',
+                    fontWeight: FontWeight.w800),)),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Obx(()=>Text("ADDRESS: ${controller.address}",style: TextStyle(fontSize: 20,
+                    color: Colors.black87,
+                    fontFamily: 'MyCustomFont',
+                    fontWeight: FontWeight.w800),)),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child:Image.asset('assets/images/map.png')),
+              Padding(
+                padding: const EdgeInsets.only(left: 30,right: 30,top: 10),
+                child: customButton(
+                    title: "Place Order",
+                    onTap: (){
+                      controller.placeOrder();
+                      print(homeController.subtotal.value.obs);
+                    }),
+              ),
+            ],
+          ),
         ),
       ),
     );
